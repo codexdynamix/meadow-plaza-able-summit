@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #1f4d3a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .card {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        background: #1f4d3a;
+        color: #f3efe6;
+        font-family: "Liberation Sans", sans-serif;
+        overflow: hidden;
+      }
+      .frame {
+        position: absolute;
+        inset: 28px;
+        border: 1px solid rgba(243, 239, 230, 0.28);
+        pointer-events: none;
+      }
+      .corner {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 220px;
+        height: 220px;
+      }
+      .copy {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 72px 120px 64px;
+      }
+      h1 {
+        margin: 0;
+        font-family: "Liberation Serif", "Bitstream Charter", serif;
+        font-weight: 400;
+        font-size: 392px;
+        line-height: 0.76;
+        letter-spacing: -0.05em;
+        color: #f3efe6;
+      }
+      .rule {
+        width: 72px;
+        height: 3px;
+        margin: 28px 0 20px;
+        background: #c56a32;
+        border: 0;
+      }
+      .tag {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        color: #f3efe6;
+      }
+      .meta {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 26px;
+        font-size: 15px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #f3efe6;
+      }
+      .meta i {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #c56a32;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <svg class="corner" viewBox="0 0 220 220" aria-hidden="true">
+        <path d="M220 0 L70 0 L220 150 Z" fill="#c56a32" />
+        <path d="M220 0 L108 0 L220 112 Z" fill="#183e2e" />
+      </svg>
+      <div class="frame"></div>
+      <div class="copy">
+        <h1>Vela</h1>
+        <hr class="rule" />
+        <p class="tag">Voice desks and private lines</p>
+        <div class="meta">
+          <span>Numbers</span><i></i><span>Dialer</span><i></i><span>Desks</span><i></i
+          ><span>Tunnels</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

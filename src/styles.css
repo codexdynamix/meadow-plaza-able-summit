@@ -1,0 +1,479 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist/wght.css";
+@import "@fontsource-variable/fraunces/wght.css";
+
+@theme {
+  --color-bg: #f3efe6;
+  --color-raised: #fffdf8;
+  --color-surface: #fffdf8;
+  --color-card: #fffdf8;
+  --color-card-hover: #efeae0;
+  --color-fg: #1c1914;
+  --color-muted: #5c564c;
+  --color-faint: #8a8378;
+  --color-line: rgba(28, 25, 20, 0.12);
+  --color-line-bright: rgba(31, 77, 58, 0.28);
+  --color-volt: #1f4d3a;
+  --color-volt-hover: #16382b;
+  --color-volt-light: #e7f0ea;
+  --color-volt-border: #c5d9cc;
+  --color-ios-green: #2f6b4f;
+  --color-ios-purple: #6b5344;
+  --color-ios-orange: #a15c32;
+  --color-hangup: #9d3b3b;
+  --color-ink: #fffdf8;
+  --font-sans: "Geist Variable", "Segoe UI", sans-serif;
+  --font-display: "Fraunces Variable", "Iowan Old Style", Georgia, serif;
+  --radius-sm: 0.625rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    letter-spacing: -0.011em;
+    selection-background-color: rgba(31, 77, 58, 0.16);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.024em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  ::selection {
+    background: rgba(31, 77, 58, 0.18);
+    color: #1c1914;
+  }
+
+  input,
+  textarea,
+  select {
+    caret-color: var(--color-volt);
+  }
+}
+
+/* Soft, paper-bright surfaces used throughout the product pages. */
+.ios-glass {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+  border: 1px solid var(--color-line);
+  box-shadow: 0 16px 42px -28px rgba(24, 51, 71, 0.28), inset 0 1px 0 #ffffff;
+}
+
+.ios-glass-header {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+  border-bottom: 1px solid var(--color-line);
+  box-shadow: 0 8px 28px -24px rgba(24, 51, 71, 0.34);
+}
+
+.windows-desktop-wallpaper {
+  isolation: isolate;
+  background: #06152f url("/assets/windows-11-bloom-dark.jpg") center / cover no-repeat;
+}
+
+.windows-desktop-taskbar {
+  background: transparent;
+  border-top: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.ios-pill-active {
+  background: #e4f0f5;
+  color: var(--color-fg);
+  box-shadow: inset 0 0 0 1px rgba(24, 51, 71, 0.08);
+}
+
+.ios-glow-blue {
+  background: radial-gradient(circle at 50% 0%, rgba(31, 77, 58, 0.08) 0%, transparent 70%);
+}
+
+.ios-glow-radial {
+  background: radial-gradient(800px circle at 50% -20%, rgba(31, 77, 58, 0.09), transparent 50%),
+              radial-gradient(600px circle at 85% 12%, rgba(161, 92, 50, 0.07), transparent 42%);
+}
+
+@keyframes soundwave-pulse {
+  0%, 100% {
+    height: 8px;
+    opacity: 0.6;
+  }
+  50% {
+    height: 28px;
+    opacity: 1;
+  }
+}
+
+@keyframes float-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes radar-ripple {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@keyframes live-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.7;
+  }
+}
+
+.animate-soundwave {
+  animation: soundwave-pulse 1.2s ease-in-out infinite alternate;
+}
+
+.animate-float-subtle {
+  animation: float-subtle 4s ease-in-out infinite;
+}
+
+.animate-radar {
+  animation: radar-ripple 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.animate-live-pulse {
+  animation: live-pulse 2s ease-in-out infinite;
+}
+
+.desk-wallpaper {
+  background-color: #f2f7fa;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(23, 109, 168, 0.06) 0%, transparent 60%),
+    linear-gradient(to right, rgba(24, 51, 71, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(24, 51, 71, 0.035) 1px, transparent 1px);
+  background-size: 100% 100%, 28px 28px, 28px 28px;
+}
+
+.text-white {
+  color: var(--color-fg);
+}
+
+.hover\:text-white:hover {
+  color: var(--color-volt);
+}
+
+.bg-black\/40 {
+  background-color: #edf3f7;
+}
+
+.bg-black\/60.text-white {
+  color: #ffffff;
+}
+
+[class~="bg-white/[0.03]"],
+[class~="bg-white/[0.04]"],
+[class~="bg-white/[0.06]"] {
+  background-color: #f1f6f8;
+}
+
+[class~="border-white/5"],
+[class~="border-white/10"] {
+  border-color: var(--color-line);
+}
+
+[class~="border-white/15"],
+[class~="border-white/20"] {
+  border-color: var(--color-line-bright);
+}
+
+@keyframes home-story-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-story {
+  animation: home-story-enter 650ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-photo-drift {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes hero-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.hero-copy {
+  animation: hero-enter 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero-visual {
+  animation: hero-enter 850ms cubic-bezier(0.2, 0.7, 0.2, 1) 100ms both;
+}
+
+.hero-photo {
+  animation: hero-photo-drift 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.hero-live-card {
+  animation: hero-float 5.2s ease-in-out infinite;
+}
+
+.hero-wave span {
+  width: 3px;
+  border-radius: 9999px;
+  background: var(--color-volt);
+  transform-origin: center;
+  animation: vela-level 850ms ease-in-out infinite;
+}
+
+.hero-wave span:nth-child(odd) {
+  animation-delay: 110ms;
+}
+
+.hero-wave span:nth-child(3n) {
+  animation-delay: 220ms;
+}
+
+.reveal-ready {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 620ms cubic-bezier(0.2, 0.7, 0.2, 1), transform 620ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal-ready.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes vela-level {
+  0%, 100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.vela-wave span {
+  transform-origin: center;
+  animation: vela-level 800ms ease-in-out infinite;
+}
+
+.vela-wave span:nth-child(odd) {
+  animation-delay: 120ms;
+}
+
+.vela-wave span:nth-child(3n) {
+  animation-delay: 240ms;
+}
+
+@keyframes pulse-gentle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.96);
+  }
+}
+
+.ios-live-indicator {
+  animation: pulse-gentle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-story {
+    animation: none;
+  }
+
+  .hero-copy,
+  .hero-visual,
+  .hero-photo,
+  .hero-live-card {
+    animation: none;
+  }
+
+  .reveal-ready {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Vela wordmark: serif name, solid ink. Not a gradient lockup. */
+.vela-wordmark {
+  font-family: var(--font-display);
+  font-weight: 560;
+  letter-spacing: -0.03em;
+  color: var(--color-fg);
+}
+
+.vela-cta {
+  background: var(--color-volt);
+  color: #fffdf8 !important;
+  box-shadow: 0 10px 24px -14px rgba(31, 77, 58, 0.75);
+  border: 0;
+}
+
+.vela-cta:hover {
+  background: var(--color-volt-hover);
+}
+
+@keyframes banner-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.vela-band {
+  background: #1c3329;
+  color: #fffdf8;
+}
+
+.vela-band h2,
+.vela-band p,
+.vela-band .text-white {
+  color: #fffdf8;
+}
+
+/*
+  Product pages were authored for a dark UI and globally remap `.text-white`
+  to ink so they read on the light canvas. Colored Voiso panels, filled
+  buttons, and the dialer still need real white type. These rules are more
+  specific than the remap and only target those surfaces.
+*/
+.bg-\[\#1c3329\],
+.bg-\[\#054E38\],
+.bg-\[\#2a2620\],
+.bg-\[\#0B1118\],
+.bg-\[\#1A2634\],
+.bg-\[\#1f4d3a\],
+.bg-\[\#1f4d3a\],
+.bg-\[\#1f4d3a\],
+.bg-\[\#16382b\],
+.bg-\[\#EA3943\],
+.bg-\[\#FF492C\],
+.bg-slate-900,
+.bg-emerald-600,
+.bg-emerald-500,
+.bg-rose-500,
+.bg-blue-600,
+.bg-purple-600,
+.bg-volt,
+.bg-ios-green,
+.bg-hangup,
+.from-volt.text-white,
+.bg-\[\#1c3329\].text-white,
+.bg-\[\#054E38\].text-white,
+.bg-\[\#2a2620\].text-white,
+.bg-\[\#0B1118\].text-white,
+.bg-\[\#1A2634\].text-white,
+.bg-slate-900.text-white {
+  color: #ffffff;
+}
+
+.bg-\[\#1c3329\] .text-white,
+.bg-\[\#054E38\] .text-white,
+.bg-\[\#2a2620\] .text-white,
+.bg-\[\#0B1118\] .text-white,
+.bg-\[\#1A2634\] .text-white,
+.bg-\[\#1f4d3a\] .text-white,
+.bg-\[\#1f4d3a\] .text-white,
+.bg-\[\#1f4d3a\] .text-white,
+.bg-\[\#EA3943\] .text-white,
+.bg-slate-900 .text-white,
+.bg-emerald-600 .text-white,
+.bg-emerald-500 .text-white,
+.bg-rose-500 .text-white,
+.bg-blue-600 .text-white,
+.bg-purple-600 .text-white,
+.bg-volt .text-white,
+.bg-ios-green .text-white,
+.bg-hangup .text-white,
+.from-volt .text-white,
+.bg-\[\#1f4d3a\].text-white,
+.bg-\[\#16382b\].text-white,
+.bg-\[\#EA3943\].text-white,
+.bg-\[\#FF492C\].text-white,
+.bg-volt.text-white,
+.bg-ios-green.text-white,
+.bg-hangup.text-white,
+.bg-emerald-600.text-white,
+.bg-rose-500.text-white {
+  color: #ffffff;
+}

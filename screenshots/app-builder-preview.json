@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Vela — Business numbers, desks, and a private line",
+      "hasCanvas": false,
+      "bodyTextLen": 9805,
+      "bodyTextHash": "28b8a35518f40b558ea9af597736b564d27d4923d9c9976565c12bdd6ae4dd64",
+      "bodyTextPrefix": "Skip to content Vela sells business numbers, agent desks, and a ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Vela — Business numbers, desks, and a private line",
+      "hasCanvas": false,
+      "bodyTextLen": 8859,
+      "bodyTextHash": "4fa7083c2a6babba108f7971c61593476181b98c03e4958127e1f5ac3bbf7198",
+      "bodyTextPrefix": "Skip to content Vela sells business numbers, agent desks, and a ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
